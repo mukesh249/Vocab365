@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10sdp"
+    android:orientation="vertical"
+    tools:context=".activities.FeedbackActivity">
+    <ImageView
+        android:id="@+id/feedback_close"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_close_black"
+        android:padding="@dimen/_3sdp"
+        android:background="@drawable/round_with_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="Feedback Report!"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_15sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:text="Found a bug? Have a suggestion? else Just share your feeling here..."
+        android:textSize="@dimen/_12sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="Write here"
+        android:id="@+id/feedback_write_here_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/feedback_email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/feedback_mobile_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Send"
+        android:textColor="@color/white"
+        android:id="@+id/feedback_send_btn"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/colorPrimaryDark"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp" />
+</LinearLayout>

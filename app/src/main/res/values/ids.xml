@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="pos">102</integer>
+    <integer name="isReplace">103</integer>
+    <integer name="path">104</integer>
+</resources>

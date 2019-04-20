@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff7b6ff5</color>
+    <color name="colorPrimaryDark">#ff7059c5</color>
+    <color name="colorAccent">#22009e</color>
+    <color name="black">#ff000000</color>
+    <color name="white">@android:color/white</color>
+    <color name="off_white">#fffffcfc</color>
+    <color name="blcak_color">#1F1F1F</color>
+    <color name="light_black">#CDCDCD</color>
+    <color name="light_blue">#1da0f1</color>
+    <color name="dark_blue">#12335E</color>
+    <color name="box_color">#c6e0ef</color>
+    <color name="stock_color_box">#12335e</color>
+    <color name="color_forgot">#00B1F1</color>
+    <color name="gray">#8B8B8B</color>
+    <color name="light_gray">#7E7E7E</color>
+    <color name="gray_home">#EBE9EA</color>
+    <color name="red">#F36969</color>
+    <color name="green">#37CF9C</color>
+    <color name="light_search_gray">#f1f0f0</color>
+    <color name="blue_dark">#0A5483</color>
+    <color name="black_light">#373737</color>
+    <color name="black_trans">#8C000000</color>
+    <color name="setting_back">#f1f8fd</color>
+    <color name="new_text_color">#ff5855ea</color>
+    <color name="gray_4">#ff9d9b9b</color>
+    <color name="button_text_color">#ffffffff</color>
+    <color name="textColor">#ff2b3e50</color>
+    <color name="common_action_bar_splitter">#ffd3c9c9</color>
+    <color name="off_white_dal">#fff2f2f2</color>
+    <color name="amber_100">#ffffecb3</color>
+    <color name="para_tab">#fffe5c57</color>
+    <color name="vocab_text">#ff726f68</color>
+    <color name="opt_txt_color">#ff898989</color>
+    <color name="violet">#ff7b6ff5</color>
+    <color name="violet_55">#ff5558d9</color>
+    <color name="violet_dark">#ff7059c5</color>
+    <color name="violet_light">#ff916ff5</color>
+    <color name="violet_transparent">#22916ff5</color>
+
+    <item name="blue" type="color">#FF33B5E5</item>
+    <item name="purple" type="color">#53ba83</item>
+    <item name="orange" type="color">#FFFFBB33</item>
+    <item name="darkblue" type="color">#FF0099CC</item>
+    <item name="darkpurple" type="color">#7b6287</item>
+    <item name="darkgreen" type="color">#7eaf1a</item>
+    <item name="darkorange" type="color">#FFFF8800</item>
+    <item name="darkred" type="color">#dc3c3c</item>
+
+    <item name="color_1" type="color">#11b7a4</item>
+    <item name="color_2" type="color">#f5f59845</item>
+    <item name="color_3" type="color">#bf6d93</item>
+    <item name="color_4" type="color">#a8abe1</item>
+    <item name="color_5" type="color">#b12c7a</item>
+    <item name="color_6" type="color">#51a3db</item>
+
+
+
+    <integer-array name="androidcolors">
+        <item>@color/blue</item>
+        <item>@color/purple</item>
+        <item>@color/green</item>
+        <item>@color/orange</item>
+        <item>@color/red</item>
+        <item>@color/darkblue</item>
+        <item>@color/darkpurple</item>
+        <item>@color/darkgreen</item>
+        <item>@color/darkorange</item>
+        <item>@color/darkred</item>
+    </integer-array>
+    <integer-array name="android_card_color">
+        <!--<item>@color/orange</item>-->
+        <item>@color/darkblue</item>
+        <item>@color/darkpurple</item>
+        <item>@color/darkgreen</item>
+        <item>@color/darkorange</item>
+        <item>@color/darkred</item>
+    </integer-array>
+</resources>

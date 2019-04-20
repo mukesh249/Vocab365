@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "901233426789",
+    "firebase_url": "https://vocab365-425fb.firebaseio.com",
+    "project_id": "vocab365-425fb",
+    "storage_bucket": "vocab365-425fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901233426789:android:b2538c567b97d3b5",
+        "android_client_info": {
+          "package_name": "com.example.advosoft.vocab365"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901233426789-eqc92ev63aidmrsgau52vjebo9con4k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.advosoft.vocab365",
+            "certificate_hash": "a3edeeefe09626d4c0772175d4c26bcf57708f65"
+          }
+        },
+        {
+          "client_id": "901233426789-593em9b006qp3e75tk4k8gdpbns3jdrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCElb729rXvLEA2ggITx33blKpzgwkG18"
+        },
+        {
+          "current_key": "AIzaSyBCElb729rXvLEA2ggITx33blKpzgwkG18"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901233426789-593em9b006qp3e75tk4k8gdpbns3jdrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="@dimen/_6sdp"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:src="@color/dark_blue"
+        android:text="1"
+        android:gravity="center"
+        android:background="@drawable/round_with_border"
+        android:id="@+id/lesson_vocab_plus_color_tv"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp" />
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:text="lesson"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_toEndOf="@+id/lesson_vocab_plus_color_tv"
+        android:layout_toStartOf="@+id/lesson_vocab_plus_color_lock"
+        android:id="@+id/lesson_vocab_plus_color_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/lesson_vocab_plus_color_lock"
+        android:layout_gravity="end"
+        android:src="@drawable/arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

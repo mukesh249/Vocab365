@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/MainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_home"
+    android:tag="layout/activity_main_0">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/_190sdp"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:id="@+id/rl_pager"
+                android:layout_centerInParent="true"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_3sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v4.view.ViewPager
+                        android:layout_gravity="center"
+                        android:id="@+id/pagerdate"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+
+                        android:paddingStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/arrow"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:rotation="180"
+                        android:src="@drawable/small_arrow_top"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:elevation="@dimen/_3sdp"
+            android:id="@+id/pager_left"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/round_btn_white"
+            android:padding="@dimen/_2sdp"
+            android:rotation="-90.0"
+            android:src="@drawable/small_arrow_top" />
+
+        <ImageView
+            android:elevation="@dimen/_3sdp"
+            android:id="@+id/pager_right"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/round_btn_white"
+            android:padding="@dimen/_2sdp"
+            android:rotation="-270.0"
+            android:src="@drawable/small_arrow_top" />
+
+    </RelativeLayout>
+    <android.support.v7.widget.SearchView
+        android:id="@+id/SearchWordDB"
+        style="@style/SearchViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_search_white_24dp" />
+    <RelativeLayout
+        android:id="@id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/SearchWordDB"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.example.advosoft.vocab365.views.CustomViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/tab_outer"
+            android:layout_alignParentTop="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <ProgressBar
+            android:id="@+id/frame_progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/tab_outer"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_alignParentBottom="true">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:paddingLeft="-1.0dip"
+                android:paddingRight="-1.0dip"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabIndicatorHeight="0.0dip"
+                app:tabMode="fixed"
+                app:tabPaddingBottom="-1.0dip"
+                app:tabPaddingEnd="-1.0dip"
+                app:tabPaddingStart="-1.0dip"
+                app:tabPaddingTop="-1.0dip" />
+
+            <ImageView
+                android:id="@+id/round_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/calendar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topLayout"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:visibility="gone">
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:calendar="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/datePicker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_5sdp"
+            android:background="@color/white"
+            calendar:mcv_headerTextAppearance="@color/black"
+            calendar:mcv_arrowColor="@android:color/black"
+            calendar:mcv_leftArrowMask="@drawable/ic_chevron_left_black_24dp"
+            calendar:mcv_rightArrowMask="@drawable/ic_chevron_right_black_24dp"
+            calendar:mcv_selectionColor="#bbd7d7d7"
+            calendar:mcv_showOtherDates="out_of_range"
+            calendar:mcv_tileHeight="@dimen/_30sdp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_view"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>
