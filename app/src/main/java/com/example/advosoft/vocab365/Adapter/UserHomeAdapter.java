@@ -196,7 +196,8 @@ public class UserHomeAdapter extends RecyclerView.Adapter<UserHomeAdapter.MyView
                     if (feeds.getType().compareTo("Vocab") == 0) {
                         context.startActivity(new Intent(context, VocabDetailActivity.class).putExtra("id", feeds.getId()).putExtra("word", feeds.getTitle()).putExtra("type", feeds.getType()));
                     } else {
-                        context.startActivity(new Intent(context, HomeDetailActivity.class).putExtra("id", feeds.getId()).putExtra("type", feeds.getType()).putExtra("data",feeds));
+                        context.startActivity(new Intent(context, HomeDetailActivity.class).putExtra("id", feeds.getId()).putExtra("type", feeds.getType()).putExtra("data",feeds).putExtra("Like_count",feeds.getLikes())
+                        .putExtra("is_like",feeds.getIsLikes()));
                     }
 
                 }
@@ -269,7 +270,7 @@ public class UserHomeAdapter extends RecyclerView.Adapter<UserHomeAdapter.MyView
 
                     if (object.optString("status").equals("success")){
                         home_frg_upvotes_count.setText(object.optString("data")+" likes");
-                        Toast.makeText(context,object.optString("message"),Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(context,object.optString("message"),Toast.LENGTH_SHORT).show();
 
                         if (object.optString("message").equalsIgnoreCase("Like")){
                             likes_news.setBackground(context.getResources().getDrawable(R.drawable.upvotes_click));

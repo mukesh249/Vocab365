@@ -77,6 +77,7 @@ public class MockTestYearPaper extends AppCompatActivity implements WebCompleteT
                             dataobj = dataArray.getJSONObject(i);
                             item.setMock_cat_id(dataobj.optString("cat_id"));
                             item.setMock_cat_name(dataobj.optString("cat_name"));
+                            item.setTime_duration(dataobj.optString("time_duration"));
 //                            item.setParent_id(dataobj.optString("parent_id"));
 
 //                            if (dataobj.optJSONObject("image") != null)

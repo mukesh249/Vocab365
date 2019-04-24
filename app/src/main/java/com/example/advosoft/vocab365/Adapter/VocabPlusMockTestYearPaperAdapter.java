@@ -127,6 +127,7 @@ public class VocabPlusMockTestYearPaperAdapter extends RecyclerView.Adapter<Voca
         private void VocabpracticeMathod(int poss){
             poss = getAdapterPosition();
             VocabPlus_MockTestYearPaperModel vocabPlusMockTestYearPaperModel = vocabPlus_mockTestYearPaperModelArrayList.get(poss);
+
             HashMap objectNew = new HashMap();
             objectNew.put("category",vocabPlusMockTestYearPaperModel.getMock_cat_id());
             objectNew.put("user_id",MyApplication.getUserID(Constants.UserID));
@@ -173,6 +174,7 @@ public class VocabPlusMockTestYearPaperAdapter extends RecyclerView.Adapter<Voca
                                 model.setStatus(jobj.optString("status"));
                                 model.setAdd_date(jobj.optString("add_date"));
                                 model.setTestTime(object.optString("data1"));
+
                                 data_arr.add(model);
                             }
                             context.startActivity(new Intent(context, ActivityQuestionQuiz.class).putExtra("data", data_arr));

@@ -478,6 +478,29 @@ public class DemoHomeActivity extends BaseActiivty implements OnDateSelectedList
         MyApplication.hideKeyBoard(DemoHomeActivity.this);
     }
 
+    public void DailyMeh(){
+        MyApplication.current_fragment="QuizFragment";
+
+        //SearchWordDB.setVisibility(View.GONE);
+
+        tabLayout.setScrollPosition(1,0f,true);
+        pager.setCurrentItem(1);
+
+        /*topLayout.setVisibility(View.VISIBLE);
+        calendar.setVisibility(View.INVISIBLE);
+        SearchWordDB.setVisibility(View.INVISIBLE);
+        //TabBack(0, 8, 8);
+       // img.setImageDrawable(Utils.DrawableChange(DemoHomeActivity.this, R.drawable.quiz, getResources().getColor(R.color.colorPrimary)));
+        if (MyApplication.current_fragment .compareTo("PastFragment")==0) {
+            PastListFragment pastListFragment = new PastListFragment();
+            pastListFragment.Reload();
+        } else if (MyApplication.current_fragment .compareTo("QuizFragment")==0) {
+            // SearchWordDB.setVisibility(View.GONE);
+            QuizFragment quizFragment = new QuizFragment();
+            quizFragment.Reload();
+        }*/
+    }
+
 
     public static DemoHomeActivity getInstance(){
         return mInstance;

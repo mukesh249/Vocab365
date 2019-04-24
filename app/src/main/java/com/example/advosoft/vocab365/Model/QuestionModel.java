@@ -28,6 +28,15 @@ public class QuestionModel implements Serializable {
     String testno;
     String testTime;
     String practice;
+    String setTimeDuration;
+
+    public String getSetTimeDuration() {
+        return setTimeDuration;
+    }
+
+    public void setSetTimeDuration(String setTimeDuration) {
+        this.setTimeDuration = setTimeDuration;
+    }
 
     public String getPractice() {
         return practice;

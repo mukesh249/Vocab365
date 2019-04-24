@@ -15,7 +15,6 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.advosoft.vocab365.MainActivity;
-import com.example.advosoft.vocab365.Manifest;
 import com.example.advosoft.vocab365.R;
 import com.example.advosoft.vocab365.fragments.MyApplication;
 import com.example.advosoft.vocab365.webutility.RequestCode;

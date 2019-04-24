@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import com.example.advosoft.vocab365.R;
 import com.example.advosoft.vocab365.fragments.MyApplication;
+import com.example.advosoft.vocab365.fragments.QuizFragment;
 import com.example.advosoft.vocab365.views.Constants;
 import com.example.advosoft.vocab365.views.Utils;
 import com.example.advosoft.vocab365.webutility.RequestCode;
@@ -79,10 +80,13 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
     ImageView imgShare;
     @BindView(R.id.speek_btn)
     Button speek_btn;
+    @BindView(R.id.likes_news) ImageView likes_news;
+    @BindView(R.id.home_frg_upvotes_count) TextView home_frg_upvotes_count;
+    @BindView(R.id.dally_quiz) TextView daily_quiz;
     HomeDataWrapper feed;
     private int mOffset;
     String apiKey="trnsl.1.1.20180928T063157Z.59bf2395e79894fd.aad7da424e7fd6e23c2d2a6b77de5c599f49dcf6";
-    private String text;
+    private String text,b_id,is_like;
     private TextToSpeech tts;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,6 +99,34 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
 
         ButterKnife.bind(this);
         feed = (HomeDataWrapper) getIntent().getSerializableExtra("data");
+
+        if (getIntent().getExtras()!=null){
+            home_frg_upvotes_count.setText(getIntent().getExtras().getString("Like_count")+" Likes");
+            is_like = getIntent().getExtras().getString("is_like");
+        }
+
+
+
+        if (is_like.compareTo("1")==0){
+            likes_news.setBackground(getResources().getDrawable(R.drawable.upvotes_click));
+        }else {
+            likes_news.setBackground(getResources().getDrawable(R.drawable.upvotes));
+        }
+
+        daily_quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                DemoHomeActivity.getInstance().DailyMeh();
+            }
+        });
+
+        likes_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LikeMethod();
+            }
+        });
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -192,6 +224,15 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
 
         new WebTask(HomeDetailActivity.this, WebUrls.BASE_URL + "/bookmarks", objectNew, HomeDetailActivity.this, RequestCode.CODE_AddBookmarks, 1);
     }
+    public void LikeMethod(){
+//        poss = getAdapterPosition();
+//        HomeDataWrapper homeDataWrapper = feedsListall.get(poss);
+        HashMap objectNew = new HashMap();
+        objectNew.put("user_id", MyApplication.getUserID(Constants.UserID));
+        objectNew.put("type","news");
+        objectNew.put("b_id",b_id);
+        new WebTask(HomeDetailActivity.this, WebUrls.BASE_URL + "/like", objectNew, this, RequestCode.CODE_Upvotes, 1);
+    }
 
     @Override
     public void onComplete(String response, int taskcode) {
@@ -200,6 +241,7 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
             try {
                 JSONObject object = new JSONObject(response);
                 JSONObject data_obj = object.getJSONObject("data");
+                b_id = data_obj.optString("id");
                 Utils.loadImage(HomeDetailActivity.this, image, WebUrls.BASE_URL_image + data_obj.optString("image"));
                 discription.setText(Html.fromHtml(data_obj.optString("description")));
                 title.setText(data_obj.optString("courtesy"));
@@ -239,6 +281,24 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
                // Toast.makeText(HomeDetailActivity.this,jsonObject.getJSONArray("text").getString(0),Toast.LENGTH_LONG).show();
             }catch (JSONException e){
 
+            }
+        }else if (taskcode==RequestCode.CODE_Upvotes){
+
+            try {
+                JSONObject object = new JSONObject(response);
+
+                if (object.optString("status").equals("success")){
+                    home_frg_upvotes_count.setText(object.optString("data")+" Likes");
+//                    Toast.makeText(HomeDetailActivity.this,object.optString("message"),Toast.LENGTH_SHORT).show();
+
+                    if (object.optString("message").equalsIgnoreCase("Like")){
+                        likes_news.setBackground(getResources().getDrawable(R.drawable.upvotes_click));
+                    }else {
+                        likes_news.setBackground(getResources().getDrawable(R.drawable.upvotes));
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
     }
