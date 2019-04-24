@@ -149,6 +149,7 @@ public class PastListFragment extends BaseFragment implements WebCompleteTask {
     @Override
     public void onStart() {
         super.onStart();
+        callapiAll();
         isRefreshing = true;
     }
 
@@ -296,6 +297,5 @@ public class PastListFragment extends BaseFragment implements WebCompleteTask {
     public void Reload() {
         callapiAll();
     }
-
 
 }
