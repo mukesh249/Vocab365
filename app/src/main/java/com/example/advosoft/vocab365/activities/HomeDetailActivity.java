@@ -154,13 +154,17 @@ public class HomeDetailActivity extends BaseActiivty implements WebCompleteTask 
         watchNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (feed.getVideo_link()!=null){
-                    Uri uri = Uri.parse(feed.getVideo_link());
-                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
-                }else {
-                    Uri uri = Uri.parse(feed.getVideo());
-                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                Uri uri=null;
+                if (feed.getVideo_link().compareTo("null")!=0){
+                    uri = Uri.parse(feed.getVideo_link());
+
+//                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                }else
+//                if (feed.getVideo_link()!=null ||  feed.getVideo_link().compareTo("")!=0 )
+                    {
+                        uri = Uri.parse("http://app4study.com/vocab365/assets/uploads/news_images/"+feed.getVideo());
                 }
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
         imgShare.setOnClickListener(new View.OnClickListener() {
